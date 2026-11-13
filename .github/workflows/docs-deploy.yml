@@ -1,3 +1,8 @@
+# Optimized by ci-cost (https://github.com/mariotavarez/ci-cost)
+# Applied 1 optimization:
+# - [LOW] Use shallow clone in "build" job
+# Estimated savings: ~0 min/run
+#
 name: "[Docs] Deployment"
 
 on:
@@ -15,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - uses: actions/setup-node@v5
         with:
           node-version: 22
